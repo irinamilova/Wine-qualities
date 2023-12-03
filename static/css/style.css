@@ -1,0 +1,7 @@
+.element {
+  height: 100vh;
+  background-color: #f1f1f1;
+  background-image: url("foto.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

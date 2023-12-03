@@ -1,0 +1,21 @@
+top wineries
+the mosr beautiful
+rating-type-wine
+num_reviews-price-type
+corr_map
+rating - price
+price - type
+num_reviews - rating
+region - value_counts
+body
+body pie chart
+heatmap
+price - type
+region - type
+rating - value_counts
+price - type
+acidity
+price - type - num_reviews
+rating - year
+num_reviews - price - type
+acidity - body - type
