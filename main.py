@@ -18,10 +18,10 @@ def streamlit():
 
 def get_df():
     df = pd.read_csv("wines_SPA.csv")
-    df = df.drop(columns=['winery', 'wine', 'year', 'rating', 'num_reviews', 'country', 'region', 'price', 'type', 'body', 'acidity'])
     #df["year"] = df["year"].replace("N.V.", np.NaN)
     df = df.dropna()
-    return df
+    return df 
+
 
 app.config["JSON_SORT_KEYS"] = False
 df = get_df()
@@ -35,12 +35,12 @@ def interactive():
 @app.route('/interactive', methods=['GET', 'POST'])
 def feature():
     if request.method == 'POST':
-        date = request.form.get('date')
-        #
-        #
-        #
-        result = {'result': wine }
-        return redirect('/interactive', data=result)
+        date = request.form.get('text')
+        print(df.columns)
+        meean = df[df['year'] == date]['price'].mean()
+        miin = df[df['year'] == date]['price'].min()
+        maax = df[df['year'] == date]['price'].max()
+        return render_template('interactive.html', data=[f"Mean {meean}", f"Min: {miin}", f"Max: {maax}"])
     else:
         return render_template('interactive.html')
 

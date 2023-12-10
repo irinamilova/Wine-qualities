@@ -1,36 +1,15 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <br>
-    <form method="post" action="/interactive_check">
-        <div class="mb-3">
-            <label for="date_field" class="form-label">Date to show stats:</label>
-            <input name="date" type="text" class="form-control" id="date_field" placeholder="2023/09/01">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Show stats</button>
-    </form>
-{% endblock %}
-
-
 <form method="POST" action="/interactive">
-    <input name="date" id="startDate" class="form-control" type="date" />
     <div class="input-group" style="max-width: 25%">
-        <input name="date" id="startDate" class="form-control" type="date" />
-        <input name="text" type="text" class="form-control" id="date_field" placeholder="text">
+        <input name="text" type="text" class="form-control" id="date_field" placeholder="year">
 
         <label for="startDate"></label>
     </div>
-    <button type="submit" class="btn btn-primary">send</button>
+    <button type="submit" class="btn btn-primary">search</button>
 </form>
 
+{% for d in data %}<p>{{ d }}</p>{% endfor %}
 
-{% if not data %}
-
-    ###
-    
-{% elif data %}
-
-    ###
-    
-{% endif %}  
+{% endblock %}
