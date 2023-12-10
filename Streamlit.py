@@ -11,7 +11,7 @@ from PIL import Image
 import numpy as np
 import streamlit as str
 
-df = pd.read_csv(r"C:\Users\irina\HSE PROJECT WINE\hse_project_wine-1\wines_SPA.csv")
+df = pd.read_csv(r"wines_SPA.csv")
 df["year"] = df["year"].replace("N.V.", np.NaN)
 df = df.dropna()
 
