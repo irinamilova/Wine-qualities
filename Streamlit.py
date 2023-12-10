@@ -76,6 +76,6 @@ if scatter:
     str.subheader("Wine types body and acidity")
     str.plotly_chart(fig3)
 
-if scatter:
+if td:
     str.subheader("Correlations between four parametres")
     str.plotly_chart(fig4)
