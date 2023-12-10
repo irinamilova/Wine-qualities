@@ -27,12 +27,12 @@ app.config["JSON_SORT_KEYS"] = False
 df = get_df()
 
 
-@app.route('/interactive')
+@app.route('/action')
 def interactive():
     return render_template('interactive.html')
 
 
-@app.route('/interactive', methods=['GET', 'POST'])
+@app.route('/action', methods=['GET', 'POST'])
 def feature():
     if request.method == 'POST':
         date = request.form.get('text')
