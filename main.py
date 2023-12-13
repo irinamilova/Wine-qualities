@@ -27,10 +27,6 @@ app.config["JSON_SORT_KEYS"] = False
 df = get_df()
 
 
-@app.route('/action')
-def interactive():
-    return render_template('interactive.html')
-
 
 @app.route('/action', methods=['GET', 'POST'])
 def feature():
@@ -40,9 +36,9 @@ def feature():
         meean = df[df['year'] == date]['price'].mean()
         miin = df[df['year'] == date]['price'].min()
         maax = df[df['year'] == date]['price'].max()
-        return render_template('interactive.html', data=[f"Mean {meean}", f"Min: {miin}", f"Max: {maax}"])
+        return render_template('action.html', data=[f"Mean {meean}", f"Min: {miin}", f"Max: {maax}"])
     else:
-        return render_template('interactive.html')
+        return render_template('action.html')
 
 
 if __name__ == '__main__':
